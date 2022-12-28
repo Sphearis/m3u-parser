@@ -86,7 +86,7 @@ def get_tree(item: Union[list, dict]) -> list:
 
 def render_csv(header: list, data: list, out_path: str = "output.csv") -> None:
     input = []
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         dict_writer = csv.DictWriter(f, fieldnames=header)
         dict_writer.writeheader()
         for i in data:
